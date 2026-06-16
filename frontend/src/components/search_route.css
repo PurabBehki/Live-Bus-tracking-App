@@ -1,0 +1,52 @@
+.search-route {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 26px;
+  border-radius: 22px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.05);
+}
+
+.search-route h2 {
+  margin-bottom: 20px;
+  font-size: 1.65rem;
+}
+
+.search-route > div {
+  display: grid;
+  gap: 18px;
+}
+
+.search-route label {
+  font-weight: 600;
+  color: #334155;
+}
+
+.search-route input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-top: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 14px;
+  background: #f8fbff;
+}
+
+.search-route input:focus {
+  border-color: rgba(37, 99, 235, 0.45);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  background: #ffffff;
+}
+
+.search-route button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 14px 18px;
+  background: #2563eb;
+  color: white;
+  border-radius: 14px;
+  font-weight: 700;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.14);
+}
+
+.search-route button:hover {
+  background: #1d4ed8;
+}

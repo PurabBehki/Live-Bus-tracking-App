@@ -1,0 +1,25 @@
+const cities=[
+    "Ludhiana",
+    "Amritsar",
+    "Jalandhar",
+    "Patiala",
+    "Bathinda",
+    "Mohali ",
+    "Hoshiarpur",
+    "Batala",
+    "Pathankot",
+    "Moga",
+    "Abohar",
+    "Malerkotla",
+    "Khanna",
+    "Phagwara",
+    "Kapurthala",
+    "Muktsar",
+    "Barnala",
+    "Firozpur",
+    "Chandigarh",
+    "Delhi",
+    "Malout",
+]
+
+export default cities;
