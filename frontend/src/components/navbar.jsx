@@ -1,8 +1,25 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 
-function Navbar(){
-    return(
+function Navbar() {
+    const [displayName, setDisplayName] = useState("Guest");
+
+    useEffect(() => {
+        const savedUser = localStorage.getItem("user");
+        if (savedUser) {
+            try {
+                const user = JSON.parse(savedUser);
+                if (user?.name) {
+                    setDisplayName(user.name);
+                }
+            } catch (err) {
+                console.error("Failed to parse stored user", err);
+            }
+        }
+    }, []);
+
+    return (
         <nav className="navabar">
             <div className="logo">
                 Track Your Bus
@@ -14,10 +31,12 @@ function Navbar(){
                 <li><Link to='/about'>About</Link> </li>
             </ul>
             <div className="profile">
-                <Link to="/profile" aria-label="Profile"><span className="profile-logo">🚍</span></Link>
+                <Link to="/profile" aria-label="Profile">
+                    <span className="profile-name">{displayName}</span>
+                </Link>
             </div>
         </nav>
-    )
+    );
 }
 
 export default Navbar;

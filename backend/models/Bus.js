@@ -49,5 +49,12 @@ const busSchema = new mongoose.Schema({
         type:[String],
         default:[],
     },
+    route: [
+        {
+        name: String,
+        latitude: Number,
+        longitude: Number
+    }
+],
 });
 module.exports = mongoose.model("Bus", busSchema);

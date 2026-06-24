@@ -1,0 +1,216 @@
+.driver-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(24, 44, 90, 0.92) 100%);
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.driver-card {
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.driver-card h1 {
+  text-align: center;
+  color: rgba(15, 23, 42, 0.92);
+  margin-bottom: 35px;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.driver-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.driver-form label {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.bus-input {
+  padding: 14px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #f7fafc;
+}
+
+.bus-input:focus {
+  outline: none;
+  border-color: rgba(15, 23, 42, 0.92);
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.bus-input:disabled {
+  background-color: #edf2f7;
+  cursor: not-allowed;
+  color: #a0aec0;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.track-btn {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.92)0%, rgba(27, 48, 97, 0.92) 100%);
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.track-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.track-btn:active {
+  transform: translateY(0);
+}
+
+.track-btn.stop-btn {
+  background: linear-gradient(135deg, #f93b1d 0%, #ea580c 100%);
+  box-shadow: 0 4px 15px rgba(249, 59, 29, 0.3);
+}
+
+.track-btn.stop-btn:hover {
+  box-shadow: 0 8px 25px rgba(249, 59, 29, 0.4);
+}
+
+.error-box {
+  padding: 14px 16px;
+  background-color: #fed7d7;
+  border-left: 4px solid #fc8181;
+  color: #742a2a;
+  border-radius: 8px;
+  font-weight: 500;
+  animation: slideIn 0.3s ease-out;
+}
+
+.status-box {
+  padding: 16px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.location-box {
+  margin-top: 24px;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  padding: 24px;
+  border-radius: 12px;
+  border-left: 4px solid #0284c7;
+  animation: slideIn 0.4s ease-out;
+}
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.location-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(2, 132, 199, 0.2);
+}
+
+.location-label {
+  font-weight: 600;
+  color: #0c4a6e;
+  font-size: 13px;
+}
+
+.location-value {
+  color: #164e63;
+  font-weight: 700;
+  font-size: 13px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .driver-card {
+    padding: 24px;
+  }
+
+  .driver-card h1 {
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+
+  .track-btn {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  .location-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}

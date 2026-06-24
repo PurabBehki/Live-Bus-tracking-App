@@ -9,12 +9,12 @@ function SearchRoute({setBuses}) {
   const [date, setDate]=useState("");
   const [time, setTime]= useState("");
   const handleSearch=async()=>{
-  try{
-    const res = await API.get(`/bus/search?source=${source}&destination=${destination}`);
-    console.log("Search result:",res.data);
-    setBuses(res.data);
-  } 
-  catch(error){ console.log(error); }
+    try{
+      const res = await API.get(`/bus/search?source=${source}&destination=${destination}`);
+      console.log("Search result:",res.data);
+      setBuses(res.data);
+    } 
+    catch(error){ console.log(error); }
 };
   return (
     <div className="search-route">

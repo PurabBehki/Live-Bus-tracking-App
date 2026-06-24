@@ -7,15 +7,15 @@ import { faBus } from "@fortawesome/free-solid-svg-icons";
 import API from "../services/api";
 
 const LoginSignup=() =>{
-    const [mode, setMode]= useState("login")
-    const [formData, setFormData] =useState({name:"", email:"", password:"" })
-    const navigate= useNavigate()
-    const isLogin=mode==="login"
+    const [mode, setMode]= useState("login");
+    const [formData, setFormData] =useState({name:"", email:"", password:"" });
+    const navigate= useNavigate();
+    const isLogin=mode==="login";
     const handleChange=(e)=> {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }))
+        const {name, value} = e.target;
+        setFormData(prev=> ({ ...prev, [name]: value }))
     }
-    const handleSubmit = async () => {
+    const handleSubmit = async() => {
         try { if(isLogin) {
                 const res=await API.post("/user/login",{ email:formData.email, password: formData.password,});
                 console.log("LOGIN RESPONSE:", res.data);

@@ -10,7 +10,7 @@ const createBus= async(req,res)=>{
     }
 };
 
-const getBuses = async (req, res) => {
+const getBuses = async(req, res) => {
     console.log("Get /bus hit")
     try {
         const { source, destination } = req.query;
@@ -24,7 +24,7 @@ const getBuses = async (req, res) => {
     }
 };
 
-const getBusById = async (req, res) => {
+const getBusById = async(req, res) => {
   try {
     console.log("Requested ID:", req.params.id);
 
@@ -42,7 +42,7 @@ const getBusById = async (req, res) => {
   }
 };
 
-const searchBus = async (req, res) => {
+const searchBus = async(req, res) => {
     try {
         const { source, destination } = req.query;
         const buses = await Bus.find({ source, destination });
@@ -53,7 +53,7 @@ const searchBus = async (req, res) => {
     }
 };
 
-const updateBus = async (req, res) => {
+const updateBus = async(req, res) => {
   try {
     const updatedBus = await Bus.findByIdAndUpdate(req.params.id,req.body,{ new: true });
       res.status(200).json(updatedBus);

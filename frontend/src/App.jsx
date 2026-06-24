@@ -8,12 +8,14 @@ import BookTicket from "./components/bookTicket";
 import BusTickets from "./components/busTickets";
 import FleetMonitoring from "./components/fleetMonitoring";
 import Profile from "./components/profile";
+import Driver from "./components/driver";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LoginSignup/>} />
+        <Route path="/driver" element={<Driver />} />
         <Route path="/passenger" element={<Passenger/>}/>
         <Route path="/tracking/:id" element={<Tracking/>} />
         <Route path="/fleet" element={<FleetMonitoring/>}/>
