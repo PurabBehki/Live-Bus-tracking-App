@@ -19,7 +19,7 @@ const LoginSignup=() =>{
         try { if(isLogin) {
                 const res=await API.post("/user/login",{ email:formData.email, password: formData.password,});
                 console.log("LOGIN RESPONSE:", res.data);
-                localStorage.setItem( "user", JSON.stringify(res.data.user) );
+                localStorage.setItem( "token", res.data.token);
                 navigate("/passenger");
             }else {const res = await API.post("/user/signup",{name:formData.name,email: formData.email, password:formData.password,});
                 alert("Signup Successful");
